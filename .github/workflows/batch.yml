@@ -18,7 +18,7 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       - name: Build with Gradle
-        run: ./gradlew clean :build -x main
+        run: ./gradlew clean :build -x test
       - name: Run batch
         run: java -jar -Dspring.batch.job.name=tickerSlackJob -Dspring.profiles.active=github ./build/libs/Cryptocurrency-0.0.1-SNAPSHOT.jar market=KRW-BTC
 
