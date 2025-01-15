@@ -1,0 +1,25 @@
+name: 업비트 코인 시세 데이터 조회
+
+on:
+  schedule:
+    - cron: '0 0,4,8,12,16,20 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up JDK 21
+        uses: actions/setup-java@v2
+        with:
+          java-version: '21'
+          distribution: 'adopt'
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+      - name: Build with Gradle
+        run: ./gradlew clean :build -x test
+      - name: Run batch
+        run: java -jar -Dspring.batch.job.name=tickerSlackJob ./build/libs/Cryptocurrency-0.0.1-SNAPSHOT.jar market=KRW-BTC
+
+
