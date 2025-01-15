@@ -17,7 +17,7 @@ public class TestController {
     public void test(@PathVariable String market) {
 //        upbitHttpClient.getTickerByMarket(market);
 //        slackHttpClient.send("hello");
-        upbitSlackService.execute(market);
+//        upbitSlackService.execute(market);
     }
 
 }

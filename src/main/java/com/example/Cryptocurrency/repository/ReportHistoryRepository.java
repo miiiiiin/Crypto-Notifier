@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 // ReportHistoryJpaRepository 호출
 @Repository
 @RequiredArgsConstructor
-public class ReportHistoryRepository{
+public class ReportHistoryRepository {
     private final ReportHistoryJpaRepository repository;
 
     public void save(String market, String price) {

@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "report_histories")
-@NoArgsConstructor(access = AccessLevel.PROTECTED) // 생성자 (default
+@NoArgsConstructor(access = AccessLevel.PROTECTED) // 생성자 (default)
 public class ReportHistory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // MYSQL은 identity 전략 (db id 생성 기준)
@@ -19,7 +19,7 @@ public class ReportHistory {
     private String market;
     @Column
     private String price;
-    @Column
+    @Column(name = "reported_at")
     private LocalDateTime reportedAt;
 
     public ReportHistory(String market, String price) {
