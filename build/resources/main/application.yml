@@ -2,13 +2,5 @@ spring:
   batch:
     job:
       enabled: true
-      name: ${job.name:NONE}
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: 'jdbc:mysql://localhost:3306/crypto-automation'
-    username: root
-    password: greenday32
+#      name: ${job.name:NONE}
 
-  sql:
-    init:
-      mode: never # ??
