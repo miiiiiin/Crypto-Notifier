@@ -14,8 +14,6 @@ public class CryptocurrencyApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CryptocurrencyApplication.class, args);
-		TestController tc = new TestController(new UpbitSlackService(new SlackHttpClient(), new UpbitHttpClient(new HTTPClient(new RestTemplate()))));
-		tc.test("KRW-BTC");
 	}
 
 }

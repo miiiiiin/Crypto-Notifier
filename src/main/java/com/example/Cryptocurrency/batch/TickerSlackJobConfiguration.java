@@ -29,7 +29,7 @@ public class TickerSlackJobConfiguration {
     }
 
     @Bean
-    public Step step(JobRepository jobRepository, Tasklet ta sklet, PlatformTransactionManager manager) {
+    public Step step(JobRepository jobRepository, Tasklet tasklet, PlatformTransactionManager manager) {
         return new StepBuilder("step", jobRepository)
                 .tasklet(tasklet , manager)
                 .build();

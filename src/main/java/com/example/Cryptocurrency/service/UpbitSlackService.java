@@ -13,7 +13,7 @@ public class UpbitSlackService {
     private final SlackHttpClient slackHttpClient;
     private final UpbitHttpClient upbitHttpClient;
 
-//    private final ReportHistoryRepository repository;
+    private final ReportHistoryRepository repository;
 
     public void execute(String market) {
         UpbitTickerDTO tickerByMarket = upbitHttpClient.getTickerByMarket(market);
@@ -24,6 +24,6 @@ public class UpbitSlackService {
         sb.append(tickerByMarket.getTrade_price());
         slackHttpClient.send(sb.toString());
 
-//        repository.save(market, String.valueOf(tickerByMarket.getTrade_price()));
+        repository.save(market, String.valueOf(tickerByMarket.getTrade_price()));
     }
 }
