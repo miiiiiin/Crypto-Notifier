@@ -1,8 +1,10 @@
 package com.example.Cryptocurrency.http;
 
+import lombok.Builder;
 import lombok.Getter;
 
 @Getter
+@Builder // 생성자 없어서 builder 처리
 public class UpbitTickerDTO {
     private String market; // 종목 구분 코드
     private String trade_date; // 최근 거래 일자(UTC) - yyyyMMdd
